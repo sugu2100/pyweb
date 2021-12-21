@@ -17,5 +17,12 @@
             {% endfor %}
         </ul>
     </div>
+    <form action="{% url 'board:answer_create' question.id %}" method="post">
+        {% csrf_token %}
+        <div>
+            <textarea name="content" rows="7" cols="50"></textarea>
+        </div>
+        <input type="submit" value="답변 등록">
+    </form>
 </body>
 </html>
