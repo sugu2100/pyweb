@@ -43,4 +43,5 @@ def answer_create(request, question_id):
             return redirect('board:detail', question_id=question.id)
     else:
         form= AnswerForm()
-    return render(request, 'board/detail.html', {'form':form})
+    context = {'question':question,'form':form}
+    return render(request, 'board/detail.html', context)
